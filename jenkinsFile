@@ -1,13 +1,13 @@
 pipeline{
     agent any
     stages{
-        stage("Checkout"){
+        stage('Checkout'){
             steps{
                 git branch: 'main', url: 'https://github.com/slimshadow2/StudentRegistryAppDemo'
             }
         }
 
-        stage("Install Dependecies"){
+        stage('Install Dependecies'){
             steps{
                 script{
                     bat 'npm install'
@@ -15,7 +15,7 @@ pipeline{
                 }
             }
         }
-        stage ("Start application and run tests"){
+        stage ('Start application and run tests'){
             steps{
                 script{
                     bat 'npm start &'
